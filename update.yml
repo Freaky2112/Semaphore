@@ -1,13 +1,20 @@
 # Do Distro Upgrade
-- name: Do Distro Upgrade
-  tags: upgrade
-  become: true
+- name: Update all host/vm packages
   ansible.builtin.apt:
-    upgrade: dist
-    update_cache: yes
-  when: ansible_distribution == 'Ubuntu'
+          update_cache: true
+          cache_valid_time: 3600
+          name: "*"
+          state: latest
+
+##- name: Do Distro Upgrade
+##  tags: upgrade
+##  become: true
+##  ansible.builtin.apt:
+##    upgrade: dist
+##    update_cache: yes
+##  when: ansible_distribution == 'Ubuntu'
 
 # remove dependencies
-- name: Remove dependencies that are no longer required.
-  ansible.builtin.apt:
-    autoremove: yes
+##- name: Remove dependencies that are no longer required.
+##  ansible.builtin.apt:
+##    autoremove: yes
