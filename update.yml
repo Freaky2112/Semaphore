@@ -7,13 +7,14 @@
       package:
         update_cache: yes
       changed_when: False
-##- name: Do Distro Upgrade
-##  tags: upgrade
-##  become: true
-##  ansible.builtin.apt:
-##    upgrade: dist
-##    update_cache: yes
-##  when: ansible_distribution == 'Ubuntu'
+  tasks:    
+    - name: Do Distro Upgrade
+      tags: upgrade
+      become: true
+      ansible.builtin.apt:
+        upgrade: dist
+        update_cache: yes
+      when: ansible_distribution == 'Ubuntu'
 
 # remove dependencies
 ##- name: Remove dependencies that are no longer required.
