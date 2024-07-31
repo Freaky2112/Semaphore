@@ -63,7 +63,7 @@ if [ "$color_prompt" = yes ]; then
     prompt_color='\[\033[;32m\]'
     info_color='\[\033[1;34m\]'
     host_color='\[\033[0;33m\]'
-    prompt_symbol=🎱
+    prompt_symbol=❄️
     if [ "$EUID" -eq 0 ]; then # Change prompt colors for root user
 	time_color='\[\033[;91m\]'
 	prompt_color='\[\033[;94m\]'
