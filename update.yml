@@ -11,10 +11,8 @@
     - name: Do Distro Upgrade
       tags: upgrade
       become: true
-      # ansible.builtin.apt:
-      apt: upgrade=dist force_apt_get=yes
-       # state: latest
-       # upgrade: dist
+       ansible.builtin.apt:
+        upgrade: dist
       when: ansible_distribution == 'Ubuntu'
 
 # remove dependencies
