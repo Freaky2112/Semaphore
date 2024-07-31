@@ -1,15 +1,12 @@
 ---
-# Do Distro Upgrade
-- host: Server
+- hosts: Server
   become: true
-  task:
-    - name: Update all host/vm packages
-      ansible.builtin.apt:
-              update_cache: true
-              cache_valid_time: 3600
-              name: "*"
-              state: latest
 
+  pre_tasks:
+    - name: update repositories
+      package:
+        update_cache: yes
+      changed_when: False
 ##- name: Do Distro Upgrade
 ##  tags: upgrade
 ##  become: true
