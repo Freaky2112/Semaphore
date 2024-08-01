@@ -1,4 +1,4 @@
-  GNU nano 6.2                                                                                         .bashrc                                                                                                   # ~/.bashrc: executed by bash(1) for non-login shells.
+# ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -47,12 +47,12 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-        # We have color support; assume it's compliant with Ecma-48
-        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-        # a case would tend to support setf rather than setaf.)
-        color_prompt=yes
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
     else
-        color_prompt=
+	color_prompt=
     fi
 fi
 
@@ -65,14 +65,15 @@ if [ "$color_prompt" = yes ]; then
     host_color='\[\033[0;33m\]'
     prompt_symbol=🎱
     if [ "$EUID" -eq 0 ]; then # Change prompt colors for root user
-        time_color='\[\033[;91m\]'
-        prompt_color='\[\033[;94m\]'
-        info_color='\[\033[1;31m\]'
-        host_color='\[\033[1;37m\]'
-        prompt_symbol=💀
+	time_color='\[\033[;91m\]'
+	prompt_color='\[\033[;94m\]'
+	info_color='\[\033[1;31m\]'
+	host_color='\[\033[1;37m\]'
+	prompt_symbol=💀
     fi
     #PS1=$prompt_color'┌──${debian_chroot:+($debian_chroot)──}('$info_color'\u${prompt_symbol}\h'$prompt_color')-[\[\033[0;1m\]\w'$prompt_color']\n'$prompt_color'└─'$info_color'\$\[\033[0m\] '
-    PS1=$prompt_color'┌──${debian_chroot:+($debian_chroot)──}('$info_color'\u${prompt_symbol}'$host_color'\h'$prompt_color')-[\[\033[1;33m\]\w'$prompt_color']\n'$prompt_color'└{'$time_color'\t'$prompt_color'}>    # BackTrack red prompt
+    PS1=$prompt_color'┌──${debian_chroot:+($debian_chroot)──}('$info_color'\u${prompt_symbol}'$host_color'\h'$prompt_color')-[\[\033[1;33m\]\w'$prompt_color']\n'$prompt_color'└{'$time_color'\t'$prompt_color'}─>'$info_color'\$\[\033[0;37m\] '
+    # BackTrack red prompt
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
@@ -140,10 +141,16 @@ fi
 
 
 # ## My Aliases ##
-
+    
+    # SSH AGENT  Alias
+    alias  ssha='eval $(ssh-agent -s) && ssh-add ~/.ssh/pi_1 && ssh-add ~/.ssh/Aliases-ed25519 && ssh-add ~/.ssh/ansible_client_ed25519'
+    # Distro Upgrade
+    alias upgrade=". ~/.local/bin/upgrade.sh"
+    # Install essentiel
+    alias fresh="sudo apt update && sudo apt install git curl wget net-tools tmux htop -y"
     # What is  my ip
     alias wip="curl icanhazip.com"
-    # Sudo Apt
+    # Sudo Apt 
     alias apt="sudo apt"
     # Reboot server with Sudo
     alias reboot="sudo reboot"
