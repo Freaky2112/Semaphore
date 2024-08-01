@@ -14,15 +14,7 @@
   - name: Download bashrc
     get_url:
       url: https://raw.githubusercontent.com/Freaky2112/Semaphore/main/.bashrc
-      # url: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
-      dest: "/home/freaky/test"
-      #owner: freaky
-      #group: freaky
+      dest: "/home/freaky/.bashrc"
+      owner: freaky
+      group: freaky
       
-
-#- name: Rename a file on remote systems
-#  ansible.builtin.file:
-#    src: /path/to/original_file.txt
-#    dest: /path/to/renamed_file.txt
-#    state: link
-#    force: yes
