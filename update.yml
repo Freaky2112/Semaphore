@@ -1,5 +1,5 @@
 ---
-- hosts: Server
+- hosts: all
   become: true
 
   pre_tasks:
