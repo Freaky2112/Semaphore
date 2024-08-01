@@ -1,5 +1,5 @@
 ---
-- host: Server
+- hosts: Server
 
   tasks:
   - name: unattended upgrades | install unattended-upgrades for debian-based hosts
