@@ -14,7 +14,7 @@
   - name: Download bashrc
     get_url:
       url: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
-      dest: "/home/freaky/.bashrc"
+      dest: "/home/freaky/test"
       #owner: freaky
       #group: freaky
       
