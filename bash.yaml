@@ -4,7 +4,7 @@
   tasks:
 # copy current bashrc to .bak 
   - name: backup bashrc
-    become_user: freaky
+    become: true
     ansible.builtin.copy:
       src: /home/freaky/.bashrc
       dest: /home/freaky/.bashrc.bak
