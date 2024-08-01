@@ -3,50 +3,24 @@
 
   tasks:
 # copy current bashrc to .bak 
-  #- name: backup bashrc
-  #  become_user: freaky
-  #  ansible.builtin.copy:
-  #    src: /home/freaky/.bashrc
-  #    dest: /home/freaky/.bashrc.bak
+  - name: backup bashrc
+    become_user: freaky
+    ansible.builtin.file:
+      src: /home/freaky/.bashrc
+      dest: /home/freaky/.bashrc.bak
 
 # copy new copy of bashrc
-  - name: dl conf
+  - name: Download bashrc
     get_url:
       url: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
-      dest: "/home/freaky/agent.cfg"
- 
-#- name: copy bashrc file
-#  become_user: freaky
-#  copy:
-#    src: files/bashrc
-#    dest: /home/freaky/.bashrc
-#    owner: freaky
-#   group: freaky
+      dest: "/home/freaky/.bashrc"
+      owner: freaky
+      group: freaky
+      
 
-# copy new copy of bash prompt
-#- name: copy bash prompt file
-#  become_user: freaky
-#  copy:
-#    src: files/bash_prompt
-#    dest: /home/freaky/.bash_prompt
-#    owner: freaky
-#    group: freaky
-
-# copy new copy of bash aliases
-#- name: copy bash aliases file
-#  become_user: freaky
-#  copy:
-#    src: files/bash_aliases
-#    dest: /home/freaky/.bash_aliases
-#    owner: freaky
-#    group: freaky
-
-# copy scripts files
-#- name: copy scripts files
-#  become_user: freaky
-#  copy:
-#    src: files/upgrade.sh
-#    dest: /home/freaky/.local/bin/upgrade.sh
-#    owner: freaky
-#    group: freaky
-#    mode: a+x
+#- name: Rename a file on remote systems
+#  ansible.builtin.file:
+#    src: /path/to/original_file.txt
+#    dest: /path/to/renamed_file.txt
+#    state: link
+#    force: yes
