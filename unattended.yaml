@@ -1,0 +1,9 @@
+---
+- host: Server 
+# install unattended upgrade
+  - name: Install packages
+    become: true
+    package:
+      name:
+        - unattended-upgrades
+      state: latest
