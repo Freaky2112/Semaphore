@@ -13,7 +13,8 @@
 # copy new copy of bashrc
   - name: Download bashrc
     get_url:
-      url: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
+      url: https://raw.githubusercontent.com/Freaky2112/Semaphore/main/.bashrc
+      # url: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
       dest: "/home/freaky/test"
       #owner: freaky
       #group: freaky
