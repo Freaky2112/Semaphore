@@ -8,7 +8,7 @@
     ansible.builtin.file:
       src: /home/freaky/.bashrc
       dest: /home/freaky/.bashrc.bak
-      state: link
+      state: touch
       
 # copy new copy of bashrc
   - name: Download bashrc
