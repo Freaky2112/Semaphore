@@ -3,17 +3,17 @@
 
   tasks:
 # copy current bashrc to .bak 
-  - name: backup bashrc
-    become_user: freaky
-    ansible.builtin.copy:
-      src: /home/freaky/.bashrc
-      dest: /home/freaky/.bashrc.bak
+  #- name: backup bashrc
+  #  become_user: freaky
+  #  ansible.builtin.copy:
+  #    src: /home/freaky/.bashrc
+  #    dest: /home/freaky/.bashrc.bak
 
 # copy new copy of bashrc
- # - name: Clone git to a local server
- #   git:
- #     repo: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
- #     dest: /home/freaky/.bashrc
+  - name: Clone git to a local server
+    git:
+      repo: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
+      dest: /home/freaky/.bashrc
 
 #- name: copy bashrc file
 #  become_user: freaky
