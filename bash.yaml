@@ -15,8 +15,8 @@
     get_url:
       url: https://github.com/Freaky2112/Semaphore/blob/main/.bashrc
       dest: "/home/freaky/.bashrc"
-      owner: freaky
-      group: freaky
+      #owner: freaky
+      #group: freaky
       
 
 #- name: Rename a file on remote systems
