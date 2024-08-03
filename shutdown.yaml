@@ -1,8 +1,16 @@
----
 # - hosts: all
-- hosts: pi
-- tasks:
+#- hosts: pi
+#- tasks:
 
-  - name: Delay shutting down the remote node
-    community.general.shutdown:
-      delay: 60
+#  - name: Delay shutting down the remote node
+#    community.general.shutdown:
+#      delay: 60
+
+
+---
+- hosts: Pi
+  gather_facts: no
+  tasks:
+    - name: shutdown
+      command: /sbin/shutdown -h now
+      sudo: yes      
