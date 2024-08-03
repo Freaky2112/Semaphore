@@ -12,5 +12,6 @@
   gather_facts: no
   tasks:
     - name: shutdown
+      become : true
       command: /sbin/shutdown -h now
-      sudo: yes      
+            
