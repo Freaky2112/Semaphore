@@ -7,6 +7,8 @@
 
 # sending a message
     - name: Send Hello World! to the webhook
-      uri:
-        url: https://discord.com/api/webhooks/1269518205370765312/1U_Z_N44wWZA8JC4K2rdzYKCKXy1KJRbADdycm2XF3Fol6-9j_RuS_HxwrA4fmF1zCSG
+      community.general.discord:
+        webhook_id: 1269518205370765312
+        webhook_token: "1U_Z_N44wWZA8JC4K2rdzYKCKXy1KJRbADdycm2XF3Fol6-9j_RuS_HxwrA4fmF1zCSG
         content: Hello, world!
+
