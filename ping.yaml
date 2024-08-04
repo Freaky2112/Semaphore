@@ -1,6 +1,6 @@
 ---
 - hosts: Pi
 
- tasks:
-   - name: Example from an Ansible Playbook
-     ansible.builtin.ping:
+  tasks:
+    - name: Example from an Ansible Playbook
+      ansible.builtin.ping:
